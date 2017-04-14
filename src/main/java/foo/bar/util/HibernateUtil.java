@@ -5,16 +5,13 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.Properties;
 
-/**
- * Created by Zarboinik on 14.04.2017.
- */
 public class HibernateUtil {
 
     private static SessionFactory sessionFactory;
 
-    public static void initSessionFactory(String url, String username, String password) throws Exception {
+    public static void initSessionFactory() throws Exception {
         if (sessionFactory == null) {
-            sessionFactory = createSessionFactoryWithoutXml(url, username, password);
+            sessionFactory = createSessionFactoryWithoutXml("jdbc:mysql://localhost:3306/lesson", "root", "Lidercool1");
         } else {
             throw new Exception("session factory already exist");
         }
@@ -71,7 +68,7 @@ public class HibernateUtil {
             p.setProperty("format_sql", "true");
 
             // that means, if table doesn't exist yet, hibernate will create them automatically
-            p.setProperty("hbm2ddl.auto", "create");
+//            p.setProperty("hbm2ddl.auto", "create");
 
             // amount of connection in one session
             p.setProperty("connection.pool_size", "5");
