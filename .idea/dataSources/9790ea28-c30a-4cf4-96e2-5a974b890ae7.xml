@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="lesson@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="lesson">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="dev"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="desktop"/>
+    <table id="9" parent="2" name="display"/>
+    <table id="10" parent="2" name="hdd"/>
+    <table id="11" parent="2" name="hibernate_sequence"/>
+    <table id="12" parent="2" name="laptop"/>
+    <table id="13" parent="2" name="product"/>
+    <column id="14" parent="8" name="form_factor">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="15" parent="8" name="desktop_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="16" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>desktop_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="17" parent="8" name="FK27tlmad12ixt87qwyass52m3r">
+      <ColNames>desktop_id</ColNames>
+      <RefSchemaName>lesson</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="18" parent="9" name="display_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="9" name="diagonal">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="20" parent="9" name="display_fk0">
+      <ColNames>display_id</ColNames>
+    </index>
+    <foreign-key id="21" parent="9" name="display_fk0">
+      <ColNames>display_id</ColNames>
+      <RefSchemaName>lesson</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="22" parent="10" name="hdd_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="10" name="size">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="24" parent="10" name="hdd_fk0">
+      <ColNames>hdd_id</ColNames>
+    </index>
+    <foreign-key id="25" parent="10" name="hdd_fk0">
+      <ColNames>hdd_id</ColNames>
+      <RefSchemaName>lesson</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="26" parent="11" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="27" parent="12" name="laptop_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="12" name="scale">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="29" parent="12" name="laptop_fk0">
+      <ColNames>laptop_id</ColNames>
+    </index>
+    <foreign-key id="30" parent="12" name="laptop_fk0">
+      <ColNames>laptop_id</ColNames>
+      <RefSchemaName>lesson</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="31" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="13" name="serial_number">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="33" parent="13" name="manufacturer">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="34" parent="13" name="price">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="35" parent="13" name="amount">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="36" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,0 +1,37 @@
+CREATE TABLE `product` (
+	`id` INT NOT NULL auto_increment,
+	`serial_number` INT,
+	`manufacturer` VARCHAR(255),
+	`price` INT,
+	`amount` INT,
+	PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `desktop` (
+	`desktop_id` INT NOT NULL,
+	`form_factor` VARCHAR(255)
+);
+
+CREATE TABLE `laptop` (
+	`laptop_id` INT NOT NULL,
+	`scale` INT
+);
+
+CREATE TABLE `display` (
+	`display_id` INT NOT NULL,
+	`diagonal` INT
+);
+
+CREATE TABLE `hdd` (
+	`hdd_id` INT NOT NULL,
+	`size` INT
+);
+
+ALTER TABLE `desktop` ADD CONSTRAINT `desktop_fk0` FOREIGN KEY (`desktop_id`) REFERENCES `product`(`id`);
+
+ALTER TABLE `laptop` ADD CONSTRAINT `laptop_fk0` FOREIGN KEY (`laptop_id`) REFERENCES `product`(`id`);
+
+ALTER TABLE `display` ADD CONSTRAINT `display_fk0` FOREIGN KEY (`display_id`) REFERENCES `product`(`id`);
+
+ALTER TABLE `hdd` ADD CONSTRAINT `hdd_fk0` FOREIGN KEY (`hdd_id`) REFERENCES `product`(`id`);
+
