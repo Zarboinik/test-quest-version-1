@@ -10,6 +10,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.FileWriter;
 import java.util.List;
 
 @Slf4j
@@ -25,6 +26,9 @@ public class Main {
             log.warn("{}", e);
             log.warn("----------------------------------------------------------------------------------------------");
         });
+        FileWriter writer = new FileWriter("shop.csv");
+        writer.write(getContent().toString());
+        writer.close();
     }
 
     private static void saveItems() throws Exception {
@@ -57,7 +61,7 @@ public class Main {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("From Desktop ");
+        Query query = session.createQuery("From Product ");
         List employees = query.list();
 
         transaction.commit();
